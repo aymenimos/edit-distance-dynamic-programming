@@ -8000,6 +8000,7 @@ serbia
 serial
 series
 serious
+ይሰራል
 seriously
 serum
 serve

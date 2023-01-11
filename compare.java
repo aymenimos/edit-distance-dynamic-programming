@@ -56,17 +56,16 @@ class editdistance {
   private void iterate() {
     ArrayList<String> last = new ArrayList<>();
     ArrayList<String> a = wordstoarray();
-    int consider = 1;
     for (String words : a) {
       int dist = discalc(words, word2);
-      if (dist <= consider) {
+      if (dist <= 2) {
         last.add(words);
       }
     }
     if (last.size() > 0) {
       System.out.println(" Did you mean ? ");
       for (String sug : last) {
-        System.out.print(sug.toUpperCase() + " ");
+        System.out.print(sug + " ");
       }
     }
   }
@@ -86,7 +85,7 @@ class editdistance {
     int[][] array = new int[len1 + 1][len2 + 1];
 
     for (int i = 0; i <= len1; i++) {
-      array[i][0] = i;
+      array[i][0] = i;   // to convert the word to empty char
     }
 
     for (int j = 0; j <= len2; j++) {
